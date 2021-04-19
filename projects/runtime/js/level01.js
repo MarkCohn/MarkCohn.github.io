@@ -16,12 +16,12 @@ var level01 = function (window) {
             "number": 1, 
             "speed": -3,
             "gameItems": [
-                { "type": "sawblade", "x": 400, "y": groundY },
-                { "type": "sawblade", "x": 600, "y": groundY },
-                { "type": "sawblade", "x": 900, "y": groundY },
-                { "type": "healthpack", "x": 700, "y": groundY},
-                { "type": "enemy", "x": 700, "y": groundY},
-                { "type": "ownobstacle", "x": 700, "y": groundY},
+                { "type": "sawblade", "x": 500, "y": groundY },
+                { "type": "sawblade", "x": 800, "y": groundY },
+                { "type": "sawblade", "x": 1200, "y": groundY },
+                { "type": "healthpack", "x": 700, "y": groundY-50},
+                { "type": "enemy", "x": 1500, "y": groundY-50},
+                { "type": "ownobstacle", "x": 1000, "y": groundY},
             ]
         };
 
@@ -42,10 +42,12 @@ var level01 = function (window) {
         }
         window.levelData = levelData;
         // set this to true or false depending on if you want to see hitzones
-        game.setDebugMode(true);
+        game.setDebugMode(false);
 
         // TODO 6 and on go here
         // BEGIN EDITING YOUR CODE HERE
+
+        /* code that is null
         var hitZoneSize = 25;
         var damageFromObstacle = 10;
         var sawBladeHitZone = game.createObstacle(hitZoneSize, damageFromObstacle);
@@ -58,7 +60,8 @@ var level01 = function (window) {
         sawBladeHitZone.addChild(obstacleImage);
         obstacleImage.x = -25;
         obstacleImage.y = -25;
-        
+        */
+
         function createSawBlade(x, y) {
             var hitZoneSize = 25;
             var damageFromObstacle = 10;
@@ -72,11 +75,7 @@ var level01 = function (window) {
             sawBladeHitZone.addChild(obstacleImage);
             obstacleImage.x = -25;
             obstacleImage.y = -25;
-        }
-
-        createSawBlade(1200, 140);
-        createSawBlade(650, 75);
-        createSawBlade(900, 130);
+        };
 
         function createMexicanSun(x, y) {
             var hitZoneSize = 25;
@@ -91,10 +90,9 @@ var level01 = function (window) {
             MexicanSunHitZone.addChild(obstacleImage);
             obstacleImage.x = -25;
             obstacleImage.y = -25;
-        }
+        };
 
-        createMexicanSun(800,100);
-
+        /* code that is null
         var enemy = game.createGameItem('enemy',25);
         var redSquare = draw.rect(70,70,'red');
         redSquare.x = -25;
@@ -121,10 +119,11 @@ var level01 = function (window) {
             game.increaseScore(100);
             enemy.fadeOut();
         }
+        */
 
         function createEnemy(x,y) {
             var enemy = game.createGameItem('enemy',25);
-            var redSquare = draw.rect(70,70,'red');
+            var redSquare = draw.bitmap('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaKO2weFxrrKo6Y0bEsKXk3Aj4iof29DW5CZ6VAE030IVGjOdSKdA4nlvzHihGjF38FQ&usqp=CAU');
             redSquare.x = -25;
             redSquare.y = -25;
             enemy.addChild(redSquare);
@@ -134,14 +133,14 @@ var level01 = function (window) {
 
             game.addGameItem(enemy);
 
-            enemy.velocityX = -1;
+            enemy.velocityX = -1.5;
 
-            enemy.rotationalVelocity = 10;
+            enemy.rotationalVelocity = 0;
 
             enemy.onPlayerCollision = function() {
                 console.log('The enemy has hit Halle');
-                game.changeIntegrity(-10);
-                enemy.fadeOut();
+                game.changeIntegrity(-100);
+                enemy.flyTo(500, 50);
             };
 
             enemy.onProjectileCollision = function() {
@@ -151,11 +150,10 @@ var level01 = function (window) {
             }
         }
 
-        createEnemy(700, groundY-50);
 
         function createHealthPack(x,y) {
             var HealthPack = game.createGameItem('HealthPack',25);
-            var redSquare = draw.rect(70,70,'red');
+            var redSquare = draw.bitmap('https://cdn3.whatculture.com/images/2014/09/Medkit-600x338.jpg');
             redSquare.x = -25;
             redSquare.y = -25;
             HealthPack.addChild(redSquare);
@@ -165,13 +163,13 @@ var level01 = function (window) {
 
             game.addGameItem(HealthPack);
 
-            HealthPack.velocityX = -1;
+            HealthPack.velocityX = -1.5;
 
-            HealthPack.rotationalVelocity = 5;
+            HealthPack.rotationalVelocity = 0;
 
             HealthPack.onPlayerCollision = function() {
                 console.log('The enemy has hit Halle');
-                game.changeIntegrity(10);
+                game.changeIntegrity(25);
                 HealthPack.fadeOut();
             };
 
@@ -179,7 +177,6 @@ var level01 = function (window) {
             }
         }
 
-        createHealthPack(900, groundY-30);
         // DO NOT EDIT CODE BELOW HERE
     }
 };
