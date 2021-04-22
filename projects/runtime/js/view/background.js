@@ -39,13 +39,13 @@ var background = function (window) {
             // TODO: 2 - Part 2
             // this fills the background with a obnoxious yellow
             // you should modify this to suit your game
-            var backgroundFill = draw.rect(canvasWidth,550,'gray');
+            var backgroundFill = draw.rect(canvasWidth,canvasHeight,'gray');
             background.addChild(backgroundFill);
             
             // TODO: 3 - Add a moon and starfield
-            var moon = draw.bitmap('https://browser-e58828bb-117a-40d7-b0aa-97bdb250c55d.ws-us03.gitpod.io/workspace/MarkCohn.github.io/wallpaperflare.com_wallpaper.jpg');
+            var moon = draw.bitmap('img/background.jpg');
             moon.x = 0;
-            moon.y = -665;
+            moon.y = groundY-1080;
             moon.scaleX = 1;
             moon.scaleY = 1;
             background.addChild(moon);
