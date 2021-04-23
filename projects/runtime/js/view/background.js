@@ -26,7 +26,7 @@ var background = function (window) {
         var background;
         
         // ANIMATION VARIABLES HERE:
-        var tree = draw.bitmap('https://browser-e58828bb-117a-40d7-b0aa-97bdb250c55d.ws-us03.gitpod.io/workspace/MarkCohn.github.io/kisspng-halo-reach-amphibious-assault-ship-aircraft-carri-5af57d37d13f28.6684766915260378158571.png');
+        var tree = draw.bitmap('img/flyingship.png');
         var buildings = [];
         var triangles = [];
         var rains = [];
@@ -82,7 +82,7 @@ var background = function (window) {
             
             // TODO 4: Part 1 - Add a tree
             tree.x = 800;
-            tree.y = 0;
+            tree.y = groundY - groundY/4*3.5;
             tree.scaleX = 0.3;
             tree.scaleY = 0.3;
             background.addChild(tree);
@@ -440,16 +440,16 @@ var background = function (window) {
             for (var i = 0; i < rains.length; i++) {
                 var rain = rains[i];
                 rain.y = rain.y + 8;
-                if (rain.y > 400) {
-                    rain.y = -700;
+                if (rain.y > groundY) {
+                    rain.y = -groundY;
                 }
             }
 
             for (var i = 0; i < reins.length; i++) {
                 var rain = reins[i];
                 rain.y = rain.y + 12;
-                if (rain.y > 400) {
-                    rain.y = -700;
+                if (rain.y > groundY) {
+                    rain.y = -groundY;
                 }
             }
         } // end of update function - DO NOT DELETE
