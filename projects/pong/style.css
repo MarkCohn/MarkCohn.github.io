@@ -1,0 +1,70 @@
+body {
+    background-color: black;
+    overflow: hidden;
+  }
+  
+  #board {
+    position: relative;
+    margin: auto;
+    width: 900px;
+    height: 600px;
+    border: 1px solid white;
+  }
+  
+  .paddle {
+      position: absolute;
+      width: 15px;
+      height: 80px;
+  }
+  
+  #paddle1 { 
+      background-color: rgb(255, 255, 255);
+  }
+  
+  #paddle2 { 
+      background-color: rgb(255, 255, 255);
+  }
+  
+  #decoration {
+   
+
+  }
+  
+  #ball {
+      position: absolute;
+      background-color: rgb(255, 255, 255);
+      width: 20px;
+      height: 20px;
+  }
+
+  #paddle1Score {
+    right: 210px;
+    top: 50px;
+    position: absolute;
+    font-size: 4.5vw;
+    font-family: 'VT323', monospace;
+    color: white;
+  }
+
+  #paddle2Score {
+    left: 210px;
+    top: 50px;
+    position: absolute;
+    font-size: 4.5vw;
+    font-family: 'VT323', monospace;
+    color: white;
+  }
+
+  #paddleWinScreen {
+    left: 420px;
+    top: 50px;
+    position: absolute;
+    font-size: 4.5vw;
+    font-family: 'VT323', monospace;
+    color: white;
+  }
+
+ 
+  
+  
+  
