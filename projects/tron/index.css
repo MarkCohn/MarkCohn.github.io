@@ -1,0 +1,85 @@
+
+body {
+  background-color: rgb(25, 65, 11);
+}
+
+#board {
+  width: 500px;
+  height: 500px;
+  border: 1px solid white;
+  background-color: black;
+  position: relative;
+}
+
+/*
+#gameItem {
+  background-color: teal;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+/*   left: 100px; */  /* Uncomment if you want to set a "starting" position */
+/*   top: 100px;  */  /* Uncomment if you want to set a "starting" position */
+/*
+}
+*/
+
+.tron,#tron {
+  background-color: rgb(0, 255, 0);
+  width: 20px;
+  height: 20px;
+  position:absolute;
+  -webkit-box-shadow:0px 0px 40px 5px rgba(0,255,17,0.35);
+  -moz-box-shadow: 0px 0px 40px 5px rgba(0,255,17,0.35);
+  box-shadow: 0px 0px 40px 5px rgba(0,255,17,0.35);
+}
+
+.tron2, #tron2 {
+  background-color: rgb(255, 0, 0);
+  width: 20px;
+  height: 20px;
+  position:absolute;
+  -webkit-box-shadow:0px 0px 40px 5px rgba(255, 0, 0, 0.35);
+  -moz-box-shadow: 0px 0px 40px 5px rgba(255, 0, 0, 0.35);
+  box-shadow: 0px 0px 40px 5px rgba(255, 0, 0, 0.35);
+}
+
+
+#apple {
+  background-color: rgb(255, 0, 0);
+  width: 20px;
+  height: 20px;
+  position:absolute;
+  -webkit-box-shadow:0px 0px 20px 10px rgba(255,0,0,0.9);
+  -moz-box-shadow: 0px 0px 20px 10px rgba(255,0,0,0.9);
+  box-shadow: 0px 0px 20px 10px rgba(255,0,0,0.9);
+}
+
+#score {
+  left: 550px;
+  top: 400px;
+  position: relative;
+  font-size: 4.5vw;
+  font-family: 'VT323', monospace;
+  color: rgb(0, 0, 0);
+}
+
+#snakeEndScreen {
+  left: 100px;
+  top: 150px;
+  position: absolute;
+  font-size: 4.5vw;
+  font-family: 'VT323', monospace;
+  color: rgb(126, 126, 126);
+  z-index: 1;
+}
+
+#playAgain {
+  left: 150px;
+  top: 350px;
+  background-color: rgb(119, 119, 119);
+  position: absolute; 
+  font-size: 32px;
+  font-family: 'VT323', monospace;
+  text-align: center;
+  z-index:1;
+}
